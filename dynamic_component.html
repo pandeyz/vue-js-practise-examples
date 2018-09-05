@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS - Practise</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function(){
+		new Vue({
+	        el: '#databinding',
+	        data: {
+	        	view: 'component1'
+	        },
+	        components: {
+	           'component1': {
+	            	template: '<div><span style = "font-size:25;color:red;">Dynamic Component</span></div>'
+	           }
+	        }
+	   	});
+	});
+	</script>
+</head>
+<body>
+
+	<div id="databinding">
+		<component v-bind:is="view"></component>
+	</div>
+
+</body>
+</html>

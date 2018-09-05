@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS - Practise</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function(){
+		var vm = new Vue({
+            el: '#computed_props',
+            data: {
+               	firstName : 'rajat',
+               	lastName : 'sharma'
+            },
+            methods: {
+
+            },
+            computed :{
+               	fullname : {
+                  	get : function() {
+                    	return this.firstName + " " + this.lastName;
+                  	},
+                  	set : function(name) {
+  	                    var fname = name.split(" ");
+  	                    this.firstName = ( fname[0].trim() != 'undefined' ) ? fname[0]: '';
+  	                    this.lastName = ( fname[1].trim() != 'undefined' ) ? fname[1]: '';
+  	                }
+               	}
+            }
+        });
+	});
+	</script>
+</head>
+<body>
+
+	<div id = "computed_props">
+		<input type="text" v-model="fullname" />
+		<h4>{{firstName}}</h4>
+		<h4>{{lastName}}</h4>
+	</div>
+
+</body>
+</html>

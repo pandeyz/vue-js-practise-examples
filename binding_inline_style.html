@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS - Practise</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function(){
+		var vm = new Vue({
+            el: '#databinding',
+            data: {
+               	title : "Inline style Binding",
+               	activeColor: 'red',
+               	fontSize : 20
+            }
+        });
+	});
+	</script>
+</head>
+<body>
+
+	<div id="databinding">
+     	<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">{{title}}</div>
+  	</div>
+
+</body>
+</html>

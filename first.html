@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS - Practise</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function(){
+		new Vue({
+			el: '#app',
+			data: {
+				hello: 'Hello all,',
+				message: 'This is my first Vue JS program'
+			}
+		});
+	});
+	</script>
+</head>
+<body>
+
+	<div id="app">
+		<p>{{ hello }}</p>
+	  	<p>{{ message }}</p>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS - Practise</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function(){
+		Vue.component('button-counter', {
+            template: '<button v-on:click = "displayLanguage(item)"><span style = "font-size:25px;">{{ item }}</span></button>',
+            data: function () {
+               	return {
+                	counter: 0
+               	}
+            },
+            props:['item'],
+            methods: {
+               	displayLanguage: function (lng) {
+                  	console.log(lng);
+                  	this.$emit('showlanguage', lng);
+               	}
+            },
+        });
+        var vm = new Vue({
+            el: '#databinding',
+            data: {
+               	languageclicked: "",
+               	languages : ["Java", "PHP", "C++", "C", "Javascript", "C#", "Python", "HTML"]
+            },
+            methods: {
+               	languagedisp: function (a) {
+                	this.languageclicked = a;
+               	}
+            }
+        });
+	});
+	</script>
+</head>
+<body>
+
+	<div id = "databinding">
+		<div id = "counter-event-example">
+			<p style = "font-size:25px;">Language displayed : <b>{{ languageclicked }}</b></p>
+			<button-counter
+			v-for = "(item, index) in languages"
+			v-bind:item = "item"
+			v-bind:index = "index"
+			v-on:showlanguage = "languagedisp"></button-counter>
+		</div>
+  	</div>
+
+</body>
+</html>

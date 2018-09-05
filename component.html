@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS - Practise</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function(){
+		Vue.component('testcomponent',{
+		  	template : '<h2>This is coming from component</h2>'
+		});
+		new Vue({
+			el: '#component_test'
+		});
+		Vue.component('component',{
+		  	template : '<h3>This is coming from component</h3>'
+		});
+		new Vue({
+			el: '#component_test1'
+		});
+	});
+	</script>
+</head>
+
+<body>
+
+	<div id = "component_test">
+		<testcomponent></testcomponent>
+	</div>
+	<div id = "component_test1">
+		<testcomponent></testcomponent>
+	</div>
+
+</body>
+</html>

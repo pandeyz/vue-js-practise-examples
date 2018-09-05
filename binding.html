@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS - Practise</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function(){
+		var vm = new Vue({
+            el: '#databinding',
+            data: {
+               title : "Data binding",
+               hreflink : "http://www.google.com"
+            }
+        });
+	});
+	</script>
+</head>
+<body>
+
+	<div id = "databinding">
+		<p>{{title}}</p>
+		<a href="hreflink" target="_blank"> Wrong way </a> <br/>
+		<a href="{{hreflink}}" target="_blank"> Wrong way </a>  <br/>
+		<a v-bind:href="hreflink" target="_blank"> Right way </a>  <br/>
+	</div>
+
+</body>
+</html>
